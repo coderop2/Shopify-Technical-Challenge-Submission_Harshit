@@ -17,13 +17,10 @@ LIMIT 1
 WITH extracted_data as (
 SELECT p.ProductID, p.ProductName, c.CustomerID, c.Country, od.OrderID, od.Quantity
 FROM OrderDetails AS od
-    
 LEFT JOIN Orders AS o
 ON od.OrderID == o.OrderID
-    
 LEFT JOIN Customers as c
 ON o.CustomerID == c.CustomerID
-    
 LEFT JOIN Products AS p
 ON p.ProductID == od.ProductID)
 
